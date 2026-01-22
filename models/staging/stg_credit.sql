@@ -216,4 +216,3 @@ joined_loans as (
 )
 
 select * from joined_loans
-
