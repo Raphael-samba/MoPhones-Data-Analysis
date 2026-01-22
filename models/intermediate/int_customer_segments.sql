@@ -44,15 +44,19 @@ income_segment as (
 
 select
     l.loan_id,
-    l.created_at as snapshot_date,
+    l.date as snapshot_date,
 
-    date_diff('year', d.date_of_birth, l.created_at) as customer_age,
+    date_diff(
+    'year',
+    cast(d.date_of_birth as date),
+    cast(l.date as date)
+) as customer_age,
 
     case
-        when date_diff('year', d.date_of_birth, l.created_at) between 18 and 25 then '18–25'
-        when date_diff('year', d.date_of_birth, l.created_at) between 26 and 35 then '26–35'
-        when date_diff('year', d.date_of_birth, l.created_at) between 36 and 45 then '36–45'
-        when date_diff('year', d.date_of_birth, l.created_at) between 46 and 55 then '46–55'
+        when date_diff('year', d.date_of_birth, l.date) between 18 and 25 then '18–25'
+        when date_diff('year', d.date_of_birth, l.date) between 26 and 35 then '26–35'
+        when date_diff('year', d.date_of_birth, l.date) between 36 and 45 then '36–45'
+        when date_diff('year', d.date_of_birth, l.date) between 46 and 55 then '46–55'
         else 'Above 55'
     end as age_segment,
 
