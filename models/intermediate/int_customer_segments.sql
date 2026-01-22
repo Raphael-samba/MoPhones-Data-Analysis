@@ -53,12 +53,12 @@ select
 ) as customer_age,
 
     case
-        when date_diff('year', d.date_of_birth, l.date) between 18 and 25 then '18–25'
-        when date_diff('year', d.date_of_birth, l.date) between 26 and 35 then '26–35'
-        when date_diff('year', d.date_of_birth, l.date) between 36 and 45 then '36–45'
-        when date_diff('year', d.date_of_birth, l.date) between 46 and 55 then '46–55'
-        else 'Above 55'
-    end as age_segment,
+    when customer_age between 18 and 25 then '18–25'
+    when customer_age between 26 and 35 then '26–35'
+    when customer_age between 36 and 45 then '36–45'
+    when customer_age between 46 and 55 then '46–55'
+    else 'Above 55'
+end as age_segment,
 
     g.gender,
     g.citizenship,
