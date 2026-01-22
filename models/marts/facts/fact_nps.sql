@@ -1,7 +1,5 @@
--- models/marts/facts/fct_credit_nps_summary.sql
-
 select
-    l.age_segment,
+    cs.age_segment,
     l.account_status_l1 as credit_outcome,
 
     -- customer experience
@@ -15,13 +13,15 @@ select
         / nullif(sum(l.total_due_today), 0) as recovery_rate
 
 from {{ ref('int_loans') }} l
-left join {{ ref('fact_nps') }} n
+left join {{ ref('int_customer_segments') }} cs
+    on l.loan_id = cs.loan_id
+left join {{ ref('stg_nps') }} n
     on l.loan_id = n.loan_id
 
 group by
-    l.age_segment,
+    cs.age_segment,
     l.account_status_l1
 
 order by
-    l.age_segment,
-    l.account_status_l1;
+    cs.age_segment,
+    l.account_status_l1

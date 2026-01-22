@@ -1,4 +1,15 @@
-select
-    "Loan Id" as loan_id,
-    date_of_birth
-from {{ ref('Customer_Data_DOB') }}
+with source as (
+
+    select
+        _id,
+        provider,
+        date_of_birth,
+        trim("Loan Id ") as loan_id,
+        "createdAt UTC" as created_at_utc
+
+    from {{ ref('Customer_Data_DOB') }}
+
+)
+
+select *
+from source

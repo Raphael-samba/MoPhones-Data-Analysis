@@ -7,7 +7,7 @@ with income as (
         + coalesce(persons_received_total, 0)
         + coalesce(banks_received, 0)
         + coalesce(paybills_received_others, 0) as total_income
-    from {{ ref('stg_customer_income') }}
+    from {{ ref('stg_customer_data_income_level') }}
 
 ),
 
@@ -44,16 +44,15 @@ income_segment as (
 
 select
     l.loan_id,
-    l.date as snapshot_date,
+    l.created_at as snapshot_date,
 
-    -- age calculation using SNAPSHOT DATE
-    date_diff('year', d.date_of_birth, l.date) as customer_age,
+    date_diff('year', d.date_of_birth, l.created_at) as customer_age,
 
     case
-        when date_diff('year', d.date_of_birth, l.date) between 18 and 25 then '18–25'
-        when date_diff('year', d.date_of_birth, l.date) between 26 and 35 then '26–35'
-        when date_diff('year', d.date_of_birth, l.date) between 36 and 45 then '36–45'
-        when date_diff('year', d.date_of_birth, l.date) between 46 and 55 then '46–55'
+        when date_diff('year', d.date_of_birth, l.created_at) between 18 and 25 then '18–25'
+        when date_diff('year', d.date_of_birth, l.created_at) between 26 and 35 then '26–35'
+        when date_diff('year', d.date_of_birth, l.created_at) between 36 and 45 then '36–45'
+        when date_diff('year', d.date_of_birth, l.created_at) between 46 and 55 then '46–55'
         else 'Above 55'
     end as age_segment,
 
@@ -63,10 +62,10 @@ select
     i.avg_income,
     i.income_segment
 
-from {{ ref('fact_loans') }} l
-left join {{ ref('stg_customer_dob') }} d
+from {{ ref('int_loans') }} l
+left join {{ ref('stg_customer_data_dob') }} d
     on l.loan_id = d.loan_id
-left join {{ ref('stg_customer_gender') }} g
+left join {{ ref('stg_customer_data_gender') }} g
     on l.loan_id = g.loan_id
 left join income_segment i
     on l.loan_id = i.loan_id
