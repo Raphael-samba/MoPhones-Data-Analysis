@@ -1,23 +1,45 @@
 MoPhones Quarterly Loan Portfolio Performance Narrative
-1a. Portfolio Growth and Loan Activity
+1a. Loan Portfolio Status Summary
 
-Over the observed period (Q1–Q5), MoPhones’ loan portfolio demonstrated consistent growth in both loan volume and total disbursed amounts:
+| Account Category      |  Loans | % of Portfolio | Avg Paid ($) | Default Rate (%) | Risk Level  |
+| --------------------- | -----: | -------------: | -----------: | ---------------: | ----------- |
+| Active (Current)      | 24,396 |          34.1% |       35,562 |             0.0% | ✅ Good      |
+| Past Due (PAR)        | 16,708 |          23.4% |       30,633 |            73.5% | ⚠️ Medium   |
+| First Payment Default |  7,368 |          10.3% |       11,599 |           100.0% | 🔴 Critical |
+| Closed / Paid         | 21,180 |          29.6% |       51,113 |             3.0% | ✅ Good      |
+| Inactive              |  1,806 |           2.5% |       31,406 |            10.7% | ⚠️ Low      |
+| Other / Unknown       |      8 |           0.0% |            0 |             0.0% | ❓ Unknown   |
 
-| Quarter | Loans  | Avg Payment | Avg Arrears | Defaults |
-| ------- | ------ | ----------- | ----------- | -------- |
-| Q1      | 8,936  | 32,002      | 11,014      | 155      |
-| Q2      | 11,026 | 34,939      | 13,504      | 214      |
-| Q3      | 13,893 | 36,219      | 14,685      | 0        |
-| Q4      | 16,866 | 37,697      | 15,116      | 0        |
-| Q5      | 20,745 | 38,272      | 14,680      | 0        |
+Key Insights:
+| Account Status            | Share of Portfolio | Default Rate | Risk Assessment                                     |
+| ------------------------- | -----------------: | -----------: | --------------------------------------------------- |
+| **Active (Current)**      |              34.1% |         0.0% | ✅ **Healthy** – Keep monitoring                     |
+| **Past Due (PAR)**        |              23.4% |        73.5% | ⚠️ **Requires intervention** – Collections focus    |
+| **First Payment Default** |              10.3% |       100.0% | 🔴 **Critical** – Write-off or recovery plan needed |
+| **Closed / Paid**         |              29.6% |         3.0% | ✅ **Performing** – Good sign of portfolio maturity  |
+| **Inactive**              |               2.5% |        10.7% | ⚠️ **Low priority** – Monitor for dormancy          |
 
+Loan Portfolio Performance by Quarter
 
-The number of active loans grew more than twofold from Q1 to Q5, reflecting increased customer adoption and trust in MoPhones’ lending products.
+| Quarter | Total Loans | Active % | PAR % | FPD % | Avg Paid ($) | Avg Arrears ($) | Avg DPD |
+| ------- | ----------: | -------: | ----: | ----: | -----------: | --------------: | ------: |
+| **Q1**  |       8,936 |    43.5% | 20.9% | 11.7% |       32,002 |          11,014 |    71.9 |
+| **Q2**  |      11,026 |    38.2% | 23.8% | 11.4% |       34,939 |          13,504 |    90.4 |
+| **Q3**  |      13,893 |    35.6% | 23.2% | 10.6% |       36,219 |          14,685 |   104.4 |
+| **Q4**  |      16,866 |    31.9% | 24.4% |  9.6% |       37,697 |          15,116 |   119.2 |
+| **Q5**  |      20,745 |    28.8% | 23.5% |  9.5% |       38,272 |          14,680 |   128.2 |
 
-Total collections increased proportionally, demonstrating steady repayment activity.
+Key Findings - Portfolio Deterioration Trend:
 
-However, the total outstanding balance also grew, suggesting that new disbursements outpaced repayments.
-
+| Metric             |    Q1 |     Q5 |      Change | Trend | Interpretation |
+| ------------------ | ----: | -----: | ----------: | :---: | -------------- |
+| **Active %**       | 43.5% |  28.8% | ⬇️ −14.7 pp |   🔴  | Declining      |
+| **PAR %**          | 20.9% |  23.5% |  ⬆️ +2.6 pp |   🔴  | Increasing     |
+| **FPD %**          | 11.7% |   9.5% |  ⬇️ −2.2 pp |   ✅   | Improving      |
+| **Avg DPD (days)** |  71.9 |  128.2 |    ⬆️ +56.3 |   🔴  | Worsening      |
+| **Portfolio Size** | 8,936 | 20,745 |    ⬆️ +132% |   📈  | Growing        |
+NB: FPD - First Payment Default
+    PAR - Portfolio at Risk
 1b.
 #Age_Segment vs Payments,Arrears, Default Rate, and Account Statuses
 
