@@ -1,4 +1,52 @@
-MoPhones Quarterly Loan Portfolio Performance Narrative
+***AGE SEGMENTATION***
+Assumptions Made:
+- DOB in Customer_Data_DOB is accurate and valid
+- Customers ages are calculated as at each credit reporting date
+- Age groups represent demographic life stages
+- No customers <18 or >120 years old (invalid ages excluded)
+- Age bands are fixed and mutually exclusive:
+18–25: Young adults
+26–35: Early career
+36–45: Mid-career
+46–55: Mature
+Above 55: Experienced/Pre-retirement
+- Each customer belongs to only one age band per reporting date.
+Age Segment   |  Total Loans
+----------------------------
+18–25         |         1491
+26–35         |         1841
+36–45         |         1473
+46–55         |         1568
+Above 55      |        65093
+
+***INCOME SEGMENTATION***
+Assumptions Made:
+- Duration field represents time period (unit unclear but consistent)
+- Four income columns capture all relevant income sources
+- Null values in income fields = zero income from that source
+- Income observed is representative of typical earning capacity
+Income Groups:
+├─ Below 5,000
+├─ 5,000–9,999
+├─ 10,000–19,999
+├─ 20,000–29,999
+├─ 30,000–49,999
+├─ 50,000–99,999
+├─ 100,000–149,999
+└─ 150,000 and above
+
+| Income Segment    | Total Loans |
+| ----------------- | ----------- |
+|Below 5,000            33
+5,000–9,999            85
+10,000–19,999          304
+20,000–29,999          526
+30,000–49,999          1,308
+50,000–99,999          2,435
+100,000–149,999        1,591
+150,000 and above      4,488         |
+
+1. MOPHONES QUARTERLY LOAN PORTFOLIO PERFORMANCE NARRATIVE
 ***Loan Portfolio Status Summary
 
 | Account Category      |  Loans | % of Portfolio | Avg Paid ($) | Default Rate (%) | Risk Level  |
@@ -528,67 +576,13 @@ b. Create Early Warning System
 - Prioritize collection resources on highest-risk, highest-recoverable accounts
 Business Impact: Prevent defaults rather than react to them, optimize collection ROI
 
-Conclusion: Analysis is valid for identifying patterns and generating hypotheses, but not for definitive causal claims without transaction-level tracking and actual NPS surveys.
-
-4. Assumptions
-    i. Reporting Date Assumption
-- Customer attributes such as age are calculated as at each credit reporting date.
-- Credit snapshots are treated as point-in-time representations and not continuous daily data.
-Why:
-- The credit data is only available at specific dates (start of January and end of each quarter).
-    ii. Date of Birth Quality Assumption
-- All customer Date of Birth (DOB) values are assumed to be valid and correctly recorded.
-- Customers below 18 years are excluded or ignored where applicable.
-Why:
-- Age calculations depend entirely on DOB accuracy.
-    iii. Age Band Definition Assumption
-- Age bands are fixed and mutually exclusive:
-18–25
-26–35
-36–45
-46–55
-Above 55
-- Each customer belongs to only one age band per reporting date.
-Why:
-This aligns with the segmentation requirement and avoids overlap.
-    iv. Income Data Availability Assumption
-- The dataset does not contain income-related fields or a duration variable.
-- As a result, average income and income band segmentation could not be calculated.
-Why:
-- Fabricating or inferring income would violate data integrity principles.
-    v. No Income Proxy Assumption
-- Credit limits, balances, or repayment behavior are not used as proxies for income.
-Why:
-- Using such proxies would introduce bias and unsupported assumptions.
-    vi. Customer Stability Assumption
-- Customer demographic attributes (DOB) are assumed to remain constant across reporting periods.
-- Only derived fields (such as age) change with time.
-Why:
-- DOB is static, while age evolves with the reporting date.
-    vii. Ethical Analytics Assumption
+NOTE: Ethical Analytics Assumption
 - Only fields explicitly present in the source data are used for transformations.
 - Missing requirements due to unavailable data are documented rather than simulated.
 Why:
 - Ensures transparency and auditability of the analysis.
 One-sentence summary (very useful)
 “All derived fields were calculated strictly from available source data, and any unmet requirements due to missing inputs were documented as assumptions rather than inferred.”
-Why this matters (for you, not the reviewer)
-This assumptions section:
-- Protects you from “why didn’t you do X?”
-- Shows analytical maturity
-- Signals production-ready thinking
-- Aligns perfectly with dbt best practices
-
-6. Limitations,Observations and Recommendations
-
-- Delinquency is increasing in later quarters, signaling the need for improved early warning systems and risk segmentation.
-
-- Missing LOAN_TERM and CUSTOMER_ID fields in some records limit the ability to fully segment and analyze risk.
-
-- Data quality improvements are recommended: ensure unique LOAN_IDs, capture all customer identifiers, and reduce missing or inconsistent fields.
-
-- Targeted repayment reminders and flexible payment plans could reduce arrears without negatively impacting customer satisfaction.
 
 Summary
-
 MoPhones’ loan portfolio is growing rapidly, with increasing total loans and collections. However, rising balances, increasing DPD, and delinquent accounts indicate emerging credit risk. Tracking key metrics and improving data quality will be critical for maintaining healthy cash flow and supporting sustainable growth.
