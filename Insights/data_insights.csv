@@ -530,24 +530,6 @@ Business Impact: Prevent defaults rather than react to them, optimize collection
 
 Conclusion: Analysis is valid for identifying patterns and generating hypotheses, but not for definitive causal claims without transaction-level tracking and actual NPS surveys.
 
-Key metrics to track portfolio performance and credit risk include:
-
-Total loans and total balances – indicate scale and exposure.
-
-Average days past due (DPD) – measures repayment delays and emerging risk.
-
-Payment recovery rates vs. expected payments – monitors cash flow efficiency.
-
-Account status distribution – flags delinquent, overdue, or defaulting accounts.
-
-These metrics provide a clear view of both portfolio growth and emerging credit risks.
-
-3. Customer Satisfaction Considerations
-
-While payment recovery is critical, aggressive collections may affect customer satisfaction (NPS).
-
-Balancing timely recovery with a positive customer experience is key for sustainable portfolio growth.
-
 4. Assumptions
     i. Reporting Date Assumption
 - Customer attributes such as age are calculated as at each credit reporting date.
